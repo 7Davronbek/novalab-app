@@ -12,17 +12,23 @@ import { rootReducer } from "./redux/reducers/rootReducer";
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
+import SeeUser from "./components/pages/SeeUser";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
+
       <Navbar />
 
       <Switch>
+
         <Route path="/" exact component={App} />
+        <Route path="/users/:id" exact component={SeeUser} />
+
       </Switch>
+
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
