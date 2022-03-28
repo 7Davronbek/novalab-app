@@ -18,6 +18,7 @@ import Register from "./components/pages/Register";
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Profile from "./components/pages/Profile";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -32,6 +33,7 @@ ReactDOM.render(
         <Route path="/" exact component={App} />
         <Route path="/log-in" exact component={Login} />
         <Route path="/registration" exact component={Register} />
+        <Route path="/profile" exact component={Profile} />
         <Route path="/users/:id" exact component={SeeUser} />
 
       </Switch>
