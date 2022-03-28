@@ -1,23 +1,11 @@
-import axios from 'axios'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { updateState } from '../../redux/actions/loginAction'
-import { API_PATH } from '../../redux/types/loginTypes'
+import { updateState, registration } from '../../redux/actions/loginAction'
 
 const Register = (props) => {
-    const [email, setEmail]= useState('')
-    const [password, setPassword]= useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-    const login = () => {
-        axios.post(API_PATH + 'api/register', {email, password})
-            .then((res) => {
-                console.log(res);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
-    
     return (
         <>
             <div className="register">
@@ -50,9 +38,11 @@ const Register = (props) => {
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
 
-                                        <button 
-                                            onClick={login}
+                                        <button
+                                            onClick={registration(email, password)}
                                             type='submit' className="btn btn-outline-warning px-4 py-2 d-block ml-auto">Regisration</button>
+
+
                                     </form>
                                 </div>
                             </div>
@@ -65,9 +55,10 @@ const Register = (props) => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+        
+//     }
+// }
 
-export default connect(mapStateToProps, { updateState })(Register)
+export default connect(null, { updateState, registration })(Register)

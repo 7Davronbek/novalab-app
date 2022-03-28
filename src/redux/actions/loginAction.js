@@ -32,3 +32,14 @@ export const getSingleUser = (params) => (dispatch) => {
       console.log(err);
     });
 };
+
+export const registration = (email, password) => (dispatch) => {
+  axios
+    .post(API_PATH + "api/register", { email, password })
+    .then((res) => {
+      dispatch(updateState({ registrations: res }));
+    })
+    .catch((err) => {
+      toast.error(err);
+    });
+};

@@ -4,6 +4,7 @@ const initialState = {
     users: [],
     user: {},
     userInfo: {},
+    registrations: {}
 }
 
 export const loginReducer = (state = initialState, action) => {

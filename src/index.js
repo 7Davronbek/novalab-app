@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/main.scss";
-import { BrowserRouter } from "react-router-dom";
-import { Switch } from "react-router-dom";
-import { Route } from "react-router-dom";
+
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { rootReducer } from "./redux/reducers/rootReducer";
 import { applyMiddleware, createStore } from "redux";
@@ -15,6 +15,9 @@ import { Provider } from "react-redux";
 import SeeUser from "./components/pages/SeeUser";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -32,6 +35,9 @@ ReactDOM.render(
         <Route path="/users/:id" exact component={SeeUser} />
 
       </Switch>
+
+      
+      <ToastContainer />
 
     </BrowserRouter>
   </Provider>,

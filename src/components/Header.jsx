@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Header = (props) => {
+    console.log(props);
     useEffect(() => {
         props.getUser()
     }, [])

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { updateState } from '../../redux/actions/loginAction'
+import { updateState, registration } from '../../redux/actions/loginAction'
 import { API_PATH } from '../../redux/types/loginTypes'
 
 const Login = (props) => {
@@ -71,4 +71,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateState })(Login)
+export default connect(mapStateToProps, { updateState, registration })(Login)
