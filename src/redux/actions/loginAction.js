@@ -10,7 +10,6 @@ export const updateState = (state) => {
 };
 
 export const getUser = () => (dispatch) => {
-  dispatch(updateState({ isLoading: true }));
   axios
     .get(API_PATH + "api/users?page=1")
     .then((res) => {
@@ -22,13 +21,12 @@ export const getUser = () => (dispatch) => {
 };
 
 export const getSingleUser = (params) => (dispatch) => {
-  dispatch(updateState({ isLoading: true }));
-
   axios
     .get(API_PATH + `api/users/${params}`)
     .then((res) => {
-      dispatch(updateState({ user: res.data.data, userInfo: res.data.support }));
-      console.log(res);
+      dispatch(
+        updateState({ user: res.data.data, userInfo: res.data.support })
+      );
     })
     .catch((err) => {
       console.log(err);

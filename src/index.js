@@ -13,6 +13,8 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import SeeUser from "./components/pages/SeeUser";
+import Login from "./components/pages/Login";
+import Register from "./components/pages/Register";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -25,6 +27,8 @@ ReactDOM.render(
       <Switch>
 
         <Route path="/" exact component={App} />
+        <Route path="/log-in" exact component={Login} />
+        <Route path="/registration" exact component={Register} />
         <Route path="/users/:id" exact component={SeeUser} />
 
       </Switch>

@@ -50,6 +50,12 @@ body {
         text-decoration: none !important;
     }
 
+    .card,
+    .card-body {
+        background-color: #000;
+        border-radius: 40px 0;
+    }
+
     .navBar {
         padding: 40px 0 20px;
         backdrop-filter: blur(10px);
@@ -151,5 +157,27 @@ body {
             font-size: 20px;
         }
 
+    }
+
+    .login, .register {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .card {
+            box-shadow: 0 0 10px silver;
+
+            input, .btn {
+                border-radius: 20px 0;
+            }
+
+        }
     }
 }

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { getSingleUser } from '../../redux/actions/loginAction'
 
 const SeeUser = (props) => {
-    console.log(props.userInfo);
     useEffect(() => {
         props.getSingleUser(props.match.params.id)
     }, [])

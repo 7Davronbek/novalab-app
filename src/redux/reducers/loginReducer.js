@@ -1,10 +1,9 @@
 import { UPDATE_STATE } from "../types/loginTypes"
 
 const initialState = {
-    isLoading: false,
     users: [],
     user: {},
-    userInfo: {}
+    userInfo: {},
 }
 
 export const loginReducer = (state = initialState, action) => {
