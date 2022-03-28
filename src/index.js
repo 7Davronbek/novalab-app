@@ -8,15 +8,23 @@ import { BrowserRouter } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import { rootReducer } from "./redux/reducers/rootReducer";
+import { applyMiddleware, createStore } from "redux";
+import thunk from "redux-thunk";
+import { Provider } from "react-redux";
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Navbar />
+  <Provider store={store}>
+    <BrowserRouter>
+      <Navbar />
 
-    <Switch>
-      <Route path="/" exact component={App} />
-    </Switch>
-  </BrowserRouter>,
+      <Switch>
+        <Route path="/" exact component={App} />
+      </Switch>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
 

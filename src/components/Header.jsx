@@ -32,6 +32,7 @@ const Header = () => {
                         <div className="col-12 text-center mb-5">
                             <h1>Clients about us</h1>
                         </div>
+
                         {user?.map((item, index) => {
                             return (
                                 <Link to={`/${item.id}`} key={index} className="col-lg-4 mb-5">
@@ -49,6 +50,7 @@ const Header = () => {
                                 </Link>
                             )
                         })}
+                        
                     </div>
                 </div>
             </div>
