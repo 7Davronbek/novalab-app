@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { updateState, registration } from '../../redux/actions/loginAction'
 
 const Register = (props) => {
+    console.log(props);
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 

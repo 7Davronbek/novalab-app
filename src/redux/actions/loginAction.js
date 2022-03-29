@@ -37,7 +37,8 @@ export const registration = (email, password) => (dispatch) => {
   axios
     .post(API_PATH + "api/register", { email, password })
     .then((res) => {
-      dispatch(updateState({ registrations: res }));
+      dispatch(updateState({ userRegister: res }));
+      localStorage.setItem('TOKEN', res.token);
     })
     .catch((err) => {
       toast.error(err);

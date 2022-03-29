@@ -5,12 +5,12 @@ import { updateState, registration } from '../../redux/actions/loginAction'
 import { API_PATH } from '../../redux/types/loginTypes'
 
 const Login = (props) => {
-    const [email, setEmail]= useState('')
-    const [password, setPassword]= useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     console.log(email, password);
 
     const login = () => {
-        axios.post(API_PATH + 'api/login', {email, password})
+        axios.post(API_PATH + 'api/login', { email, password })
             .then((res) => {
                 console.log(res);
             })
@@ -18,7 +18,7 @@ const Login = (props) => {
                 console.log(err);
             })
     }
-    
+
     return (
         <>
             <div className="login">
@@ -51,7 +51,7 @@ const Login = (props) => {
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
 
-                                        <button 
+                                        <button
                                             onClick={login}
                                             type='submit' className="btn btn-outline-warning px-4 py-2 d-block ml-auto">Log in</button>
                                     </form>
@@ -67,6 +67,7 @@ const Login = (props) => {
 }
 
 const mapStateToProps = state => {
+    console.log(state);
     return {
     }
 }
