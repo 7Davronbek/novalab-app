@@ -42,7 +42,6 @@ const Register = (props) => {
                                             onClick={registration(email, password)}
                                             type='submit' className="btn btn-outline-warning px-4 py-2 d-block ml-auto">Regisration</button>
 
-
                                     </form>
                                 </div>
                             </div>
@@ -57,7 +56,7 @@ const Register = (props) => {
 
 // const mapStateToProps = state => {
 //     return {
-        
+
 //     }
 // }
 
